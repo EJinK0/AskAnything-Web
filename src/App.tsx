@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import AppRoutes from './AppRoutes'
+// App.tsx
+import { FC } from 'react';
+import './App.css';
+import AppRoutes from './AppRoutes';
 
-function App() {
+const App: FC = () => {
     return (
         <>
-            <AppRoutes/>
+            <AppRoutes />
         </>
-    )
-}
+    );
+};
 
-export default App
+export default App;
