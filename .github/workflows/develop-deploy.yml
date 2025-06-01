@@ -48,7 +48,7 @@ jobs:
 
       # AWS S3에 빌드 결과 업로드
       - name: Deploying to S3 BUCKET
-        run: aws s3 sync ./build/ s3://${{ secrets.S3_DEV_REPO }} --delete
+        run: aws s3 sync ./dist/ s3://${{ secrets.S3_DEV_REPO }} --delete
 
       # cloudfront 무효화
       - name: Invalidate cache for CloudFront
