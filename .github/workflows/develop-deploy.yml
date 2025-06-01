@@ -44,9 +44,7 @@ jobs:
         run: |
           CI=false
           npm ci 
-          npm run config
           npm run build
-          npm run site-config
 
       # AWS S3에 빌드 결과 업로드
       - name: Deploying to S3 BUCKET
@@ -54,7 +52,7 @@ jobs:
 
       # cloudfront 무효화
       - name: Invalidate cache for CloudFront
-        run: aws cloudfront create-invalidation --distribution-id E1Z7KYMX9T5HOB --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DEV_ID }} --paths "/*"
 
       # Discord 에 메시지 전송
     #   - name: Sending Discord message...
