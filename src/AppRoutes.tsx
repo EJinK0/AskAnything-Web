@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/home/Home';
+import HomePage from './pages/Home/HomePage';
 
 interface RouteItem {
     path: string;
@@ -12,7 +12,7 @@ const AppRoutes: React.FC = () => {
   const pathList: RouteItem[] = [
         {
             path: '/',
-            element: <Home />,
+            element: <HomePage />,
             isLogin: true
         }
   ];
